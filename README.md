@@ -7,13 +7,15 @@ API used for listing and getting US zip data
 
 METHOD | Base URL
 ------------ | -------------
-GET | TBD
+GET | ```https://us-zip-api.vercel.app/```
 
 ### Routes and Queries
 Data | Endpoint
 ------------ | -------------
 Route | ```/api/v1```
-Specific Zip | ```/api/v1/<zip>```
+Specific Zip Route | ```/api/v1/<zip>```
+
+### Pagination and Limit
 Page | ```?page=1```
 Limit | ```?limit=10```
 Query | ```?page=1&limit=10```
