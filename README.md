@@ -9,13 +9,15 @@ METHOD | Base URL
 ------------ | -------------
 GET | ```https://us-zip-api.vercel.app/```
 
-### Routes and Queries
+### Routes
 Data | Endpoint
 ------------ | -------------
 Route | ```/api/v1```
 Specific Zip Route | ```/api/v1/<zip>```
 
 ### Pagination and Limit
+Name | Query
+------------ | -------------
 Page | ```?page=1```
 Limit | ```?limit=10```
 Query | ```?page=1&limit=10```
