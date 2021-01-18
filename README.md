@@ -1,4 +1,4 @@
-## Dummy Review [![Made by](https://img.shields.io/badge/Made%20with%20%F0%9F%92%9C%20by-Justin%20Balaguer-15202B.svg?longCache=true&style=for-the-badge)](https://justinbalaguer.github.io/)
+## US ZIP API [![Made by](https://img.shields.io/badge/Made%20with%20%F0%9F%92%9C%20by-Justin%20Balaguer-15202B.svg?longCache=true&style=for-the-badge)](https://justinbalaguer.github.io/)
 
 API used for listing and getting US zip data
 ![Made With](https://img.shields.io/badge/Made%20with-Node.JS-68A063?style=for-the-badge&logo=Node.JS)
@@ -12,8 +12,11 @@ GET | ```https://us-zip-api.vercel.app/```
 ### Routes
 Data | Endpoint
 ------------ | -------------
-Route | ```/api/v1```
+Main Route | ```/api/v1```
 Specific Zip Route | ```/api/v1/<zip>```
+List of Zip Route | ```/api/v1/zip```
+List of State Route | ```/api/v1/state```
+List of City Route | ```/api/v1/city```
 
 ### Pagination and Limit
 Name | Query

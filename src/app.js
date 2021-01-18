@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 require('dotenv').config();
 
@@ -18,6 +19,11 @@ app.use(express.json());
 // Enable if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
 // see https://expressjs.com/en/guide/behind-proxies.html
 app.set('trust proxy', 1);
+
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.get('/', (req, res) => {
   res.json({

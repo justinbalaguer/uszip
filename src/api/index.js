@@ -1,25 +1,10 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const ZipRequest = require('../models/schema');
+const state = require('./state');
+const zip = require('./zip');
+const city = require('./city');
 
 const router = express.Router();
-const { Schema } = mongoose;
-
-const zipSchema = new Schema({
-  zip: String,
-  primary_city: String,
-  state: String,
-  area_codes: String,
-  country: String,
-  latitude: String,
-  longiture: String
-});
-
-const ZipRequest = mongoose.model('ZipReqest', zipSchema, 'zip');
-
-mongoose.connect(process.env.MONGODB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
 router.get('/', async (req, res, next) => {
   try {
@@ -39,11 +24,15 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.use('/state', state);
+router.use('/zip', zip);
+router.use('/city', city);
+
 router.get('/:zip', async (req, res, next) => {
   try {
-    const { zip } = req.params;
+    const { zip_code } = req.params;
     const data = await ZipRequest.find({
-      zip: zip
+      zip: zip_code
     }).exec();
     res.json(data);
   } catch (error) {
